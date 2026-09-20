@@ -97,7 +97,9 @@ The application is deployed as a live web application.
 
 ## 👥 Team
 
-[Add team members here]
+Baikani Akshitha
+Bathuka Naveen
+Nadkuda Raghavi
 
 ## 📄 Documentation
 

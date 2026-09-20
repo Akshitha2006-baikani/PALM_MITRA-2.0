@@ -2642,9 +2642,8 @@ async function loadLanguage(language) {
     try {
 
         const response =
-            await fetch(
-                `../translations/${language}.json`
-            );
+            await 
+            fetch(`translations/${language}.json`)
 
         if (!response.ok) {
 

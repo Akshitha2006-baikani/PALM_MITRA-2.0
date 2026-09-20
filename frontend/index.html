@@ -40,9 +40,11 @@
 
             <div>
 
-                <h1>Palm Mitra</h1>
+                <h1  data-i18n="appName">
+                    Palm Mitra</h1>
 
-                <p>Smart Oil-Palm Assistant</p>
+                <p
+                data-i18n="tagline">Smart Oil-Palm Assistant</p>
 
             </div>
 
@@ -50,21 +52,43 @@
 
         <nav>
 
-            <a href="#home">Home</a>
+    <a href="#home" data-i18n="nav.home">Home</a>
 
-            <a href="#dashboard">Dashboard</a>
+    <a href="#dashboard" data-i18n="nav.dashboard">Dashboard</a>
 
-            <a href="#farm">My Farm</a>
+    <a href="#farm" data-i18n="nav.myFarm">My Farm</a>
 
-            <a href="#weather">Weather</a>
+    <a href="#weather" data-i18n="nav.weather">Weather</a>
 
-            <a href="#activities">Activities</a>
+    <a href="#activities" data-i18n="nav.activities">Activities</a>
 
-            <a href="#analyze">Leaf Analysis</a>
+    <a href="#analyze" data-i18n="nav.leafAnalysis">Leaf Analysis</a>
 
-            <a href="#assistant">AI Assistant</a>
+    <a href="#assistant" data-i18n="nav.aiAssistant">AI Assistant</a>
 
-        </nav>
+</nav>
+
+        <div class="user-auth-area">
+
+     <div class="language-selector">
+
+        <label for="languageSelect">
+            🌐
+        </label>
+
+        <select id="languageSelect">
+            <option value="en">English</option>
+            <option value="hi">हिंदी</option>
+            <option value="te">తెలుగు</option>
+        </select>
+
+    </div>
+
+    <button id="logoutButton" type="button" class="logout-button" data-i18n="nav.logout">
+    Logout
+</button>
+
+</div>
 
     </header>
 
@@ -82,29 +106,33 @@
 
             <div class="hero-content">
 
-                <span class="badge">
-                    🌱 AI-Powered Agriculture
-                </span>
+                <span class="badge" data-i18n="hero.badge">
+    🌱 AI-Powered Agriculture
+</span>
 
-                <h2>
-                    Smarter Oil-Palm
-                    <span>Care Starts Here</span>
-                </h2>
+<h2>
+    <span data-i18n="hero.title">
+        Smarter Oil-Palm
+    </span>
+    <span data-i18n="hero.titleHighlight">
+        Care Starts Here
+    </span>
+</h2>
 
-                <p>
-                    Palm Mitra helps oil-palm growers
-                    monitor their farm, analyze leaves,
-                    manage activities and make informed
-                    cultivation decisions.
-                </p>
+<p data-i18n="hero.description">
+    Palm Mitra helps oil-palm growers
+    monitor their farm, analyze leaves,
+    manage activities and make informed
+    cultivation decisions.
+</p>
 
-                <a
-                    href="#dashboard"
-                    class="primary-button"
-                >
-                    Open Farm Dashboard
-                </a>
-
+<a
+    href="#dashboard"
+    class="primary-button"
+    data-i18n="hero.dashboardButton"
+>
+    Open Farm Dashboard
+</a>
             </div>
 
             <div class="hero-visual">
@@ -133,19 +161,21 @@
 
             <div class="section-heading">
 
-                <span class="section-label">
-                    Farm Overview
-                </span>
+                <span
+    class="section-label"
+    data-i18n="dashboard.sectionLabel"
+>
+    Farm Overview
+</span>
 
-                <h2>
-                    Your Farm Dashboard
-                </h2>
+<h2 data-i18n="dashboard.title">
+    Your Farm Dashboard
+</h2>
 
-                <p>
-                    A quick overview of your oil-palm
-                    plantation and current farm conditions.
-                </p>
-
+<p data-i18n="dashboard.description">
+    A quick overview of your oil-palm
+    plantation and current farm conditions.
+</p>
             </div>
 
 
@@ -161,7 +191,7 @@
 
                     <div>
 
-                        <span>
+                        <span data-i18n="dashboard.palmArea">
                             Farm Area
                         </span>
 
@@ -182,7 +212,7 @@
 
                     <div>
 
-                        <span>
+                        <span data-i18n="dashboard.palmCount">
                             Palm Count
                         </span>
 
@@ -203,7 +233,7 @@
 
                     <div>
 
-                        <span>
+                        <span data-i18n="dashboard.waterSource">
                             Water Source
                         </span>
 
@@ -224,7 +254,7 @@
 
                     <div>
 
-                        <span>
+                        <span data-i18n="dashboard.plantation">
                             Plantation
                         </span>
 
@@ -249,13 +279,16 @@
 
                         <div>
 
-                            <span class="section-label">
-                                Farm Status
-                            </span>
+                            <span
+    class="section-label"
+    data-i18n="dashboard.farmStatus"
+>
+    Farm Status
+</span>
 
-                            <h3>
-                                Current Overview
-                            </h3>
+<h3 data-i18n="dashboard.currentOverview">
+    Current Overview
+</h3>
 
                         </div>
 
@@ -272,7 +305,7 @@
 
                         <div>
 
-                            <span>
+                            <span data-i18n="dashboard.location">
                                 Location
                             </span>
 
@@ -284,7 +317,7 @@
 
                         <div>
 
-                            <span>
+                            <span data-i18n="dashboard.soilType">
                                 Soil Type
                             </span>
 
@@ -296,7 +329,7 @@
 
                         <div>
 
-                            <span>
+                            <span data-i18n="dashboard.irrigation">
                                 Irrigation
                             </span>
 
@@ -308,7 +341,7 @@
 
                         <div>
 
-                            <span>
+                            <span data-i18n="dashboard.plantationDate">
                                 Plantation Date
                             </span>
 
@@ -329,13 +362,16 @@
 
                         <div>
 
-                            <span class="section-label">
-                                Quick Actions
-                            </span>
+                    <span
+    class="section-label"
+    data-i18n="dashboard.quickActions"
+>
+    Quick Actions
+</span>
 
-                            <h3>
-                                Manage Your Farm
-                            </h3>
+<h3 data-i18n="dashboard.manageFarm">
+    Manage Your Farm
+</h3>
 
                         </div>
 
@@ -343,21 +379,21 @@
 
                     <div class="quick-actions">
 
-                        <a href="#farm">
-                            🌱 Farm Profile
-                        </a>
+                        <a href="#farm" data-i18n="dashboard.farmProfile">
+    🌱 Farm Profile
+</a>
 
-                        <a href="#weather">
-                            🌦️ Weather
-                        </a>
+<a href="#weather" data-i18n="dashboard.weather">
+    🌦️ Weather
+</a>
 
-                        <a href="#activities">
-                            📅 Activities
-                        </a>
+<a href="#activities" data-i18n="dashboard.activities">
+    📅 Activities
+</a>
 
-                        <a href="#analyze">
-                            🔬 Analyze Leaf
-                        </a>
+<a href="#analyze" data-i18n="dashboard.analyzeLeaf">
+    🔬 Analyze Leaf
+</a>
 
                     </div>
 
@@ -379,18 +415,21 @@
 
             <div class="section-heading">
 
-                <span class="section-label">
-                    Farm Profile
-                </span>
+                <span
+    class="section-label"
+    data-i18n="farm.sectionLabel"
+>
+    Farm Profile
+</span>
 
-                <h2>
-                    My Farm
-                </h2>
+<h2 data-i18n="farm.title">
+    My Farm
+</h2>
 
-                <p>
-                    Enter your plantation details so Palm Mitra
-                    can provide more relevant guidance.
-                </p>
+<p data-i18n="farm.description">
+    Enter your plantation details so Palm Mitra
+    can provide more relevant guidance.
+</p>
 
             </div>
 
@@ -404,7 +443,7 @@
 
                     <div class="form-group">
 
-                        <label for="farmName">
+                        <label data-i18n="farm.farmName" for="farmName">
                             Farm Name
                         </label>
 
@@ -421,7 +460,7 @@
 
                     <div class="form-group">
 
-                        <label for="farmLocation">
+                        <label data-i18n="farm.farmLocation" for="farmLocation">
                             Farm Location
                         </label>
 
@@ -441,7 +480,7 @@
 
                         <div class="form-group">
 
-                            <label for="farmArea">
+                            <label data-i18n="farm.farmArea" for="farmArea">
                                 Farm Area (acres)
                             </label>
 
@@ -460,7 +499,7 @@
 
                         <div class="form-group">
 
-                            <label for="palmCount">
+                            <label data-i18n="farm.palmCount" for="palmCount">
                                 Number of Palms
                             </label>
 
@@ -483,33 +522,48 @@
 
                         <div class="form-group">
 
-                            <label for="plantationType">
+                            <label data-i18n="farm.plantationType" for="plantationType">
                                 Plantation Type
                             </label>
 
                             <select id="plantationType">
 
-                                <option value="">
-                                    Select plantation type
-                                </option>
+    <option
+        value=""
+        data-i18n="farm.options.plantationType.select"
+    >
+        Select plantation type
+    </option>
 
-                                <option value="Commercial">
-                                    Commercial
-                                </option>
+    <option
+        value="Commercial"
+        data-i18n="farm.options.plantationType.commercial"
+    >
+        Commercial
+    </option>
 
-                                <option value="Smallholder">
-                                    Smallholder
-                                </option>
+    <option
+        value="Smallholder"
+        data-i18n="farm.options.plantationType.smallholder"
+    >
+        Smallholder
+    </option>
 
-                                <option value="Nursery">
-                                    Nursery
-                                </option>
+    <option
+        value="Nursery"
+        data-i18n="farm.options.plantationType.nursery"
+    >
+        Nursery
+    </option>
 
-                                <option value="New Plantation">
-                                    New Plantation
-                                </option>
+    <option
+        value="New Plantation"
+        data-i18n="farm.options.plantationType.newPlantation"
+    >
+        New Plantation
+    </option>
 
-                            </select>
+</select>
 
                         </div>
 
@@ -518,37 +572,55 @@
 
                         <div class="form-group">
 
-                            <label for="waterSource">
+                            <label data-i18n="dashboard.waterSource" for="waterSource">
                                 Water Source
                             </label>
 
                             <select id="waterSource">
 
-                                <option value="">
-                                    Select water source
-                                </option>
+    <option
+        value=""
+        data-i18n="farm.options.waterSource.select"
+    >
+        Select water source
+    </option>
 
-                                <option value="Borewell">
-                                    Borewell
-                                </option>
+    <option
+        value="Borewell"
+        data-i18n="farm.options.waterSource.borewell"
+    >
+        Borewell
+    </option>
 
-                                <option value="Canal">
-                                    Canal
-                                </option>
+    <option
+        value="Canal"
+        data-i18n="farm.options.waterSource.canal"
+    >
+        Canal
+    </option>
 
-                                <option value="Rainwater">
-                                    Rainwater
-                                </option>
+    <option
+        value="Rainwater"
+        data-i18n="farm.options.waterSource.rainwater"
+    >
+        Rainwater
+    </option>
 
-                                <option value="River">
-                                    River
-                                </option>
+    <option
+        value="River"
+        data-i18n="farm.options.waterSource.river"
+    >
+        River
+    </option>
 
-                                <option value="Other">
-                                    Other
-                                </option>
+    <option
+        value="Other"
+        data-i18n="farm.options.waterSource.other"
+    >
+        Other
+    </option>
 
-                            </select>
+</select>
 
                         </div>
 
@@ -568,31 +640,49 @@
 
                             <select id="irrigationType">
 
-                                <option value="">
-                                    Select irrigation type
-                                </option>
+    <option
+        value=""
+        data-i18n="farm.options.irrigation.select"
+    >
+        Select irrigation type
+    </option>
 
-                                <option value="Drip">
-                                    Drip
-                                </option>
+    <option
+        value="Drip"
+        data-i18n="farm.options.irrigation.drip"
+    >
+        Drip
+    </option>
 
-                                <option value="Sprinkler">
-                                    Sprinkler
-                                </option>
+    <option
+        value="Sprinkler"
+        data-i18n="farm.options.irrigation.sprinkler"
+    >
+        Sprinkler
+    </option>
 
-                                <option value="Flood">
-                                    Flood / Surface
-                                </option>
+    <option
+        value="Flood"
+        data-i18n="farm.options.irrigation.flood"
+    >
+        Flood / Surface
+    </option>
 
-                                <option value="Manual">
-                                    Manual
-                                </option>
+    <option
+        value="Manual"
+        data-i18n="farm.options.irrigation.manual"
+    >
+        Manual
+    </option>
 
-                                <option value="Rainfed">
-                                    Rainfed
-                                </option>
+    <option
+        value="Rainfed"
+        data-i18n="farm.options.irrigation.rainfed"
+    >
+        Rainfed
+    </option>
 
-                            </select>
+</select>
 
                         </div>
 
@@ -607,35 +697,56 @@
 
                             <select id="soilType">
 
-                                <option value="">
-                                    Select soil type
-                                </option>
+    <option
+        value=""
+        data-i18n="farm.options.soil.select"
+    >
+        Select soil type
+    </option>
 
-                                <option value="Red Soil">
-                                    Red Soil
-                                </option>
+    <option
+        value="Red Soil"
+        data-i18n="farm.options.soil.red"
+    >
+        Red Soil
+    </option>
 
-                                <option value="Black Soil">
-                                    Black Soil
-                                </option>
+    <option
+        value="Black Soil"
+        data-i18n="farm.options.soil.black"
+    >
+        Black Soil
+    </option>
 
-                                <option value="Sandy Soil">
-                                    Sandy Soil
-                                </option>
+    <option
+        value="Sandy Soil"
+        data-i18n="farm.options.soil.sandy"
+    >
+        Sandy Soil
+    </option>
 
-                                <option value="Loamy Soil">
-                                    Loamy Soil
-                                </option>
+    <option
+        value="Loamy Soil"
+        data-i18n="farm.options.soil.loamy"
+    >
+        Loamy Soil
+    </option>
 
-                                <option value="Clay Soil">
-                                    Clay Soil
-                                </option>
+    <option
+        value="Clay Soil"
+        data-i18n="farm.options.soil.clay"
+    >
+        Clay Soil
+    </option>
 
-                                <option value="Unknown">
-                                    Unknown
-                                </option>
+    <option
+        value="Unknown"
+        data-i18n="farm.options.soil.unknown"
+    >
+        Unknown
+    </option>
 
-                            </select>
+</select>
 
                         </div>
 
@@ -664,7 +775,7 @@
                         type="submit"
                         class="primary-button"
                     >
-                        Save Farm Profile
+                        <span data-i18n="farm.saveProfile">Save Farm Profile</span>
                     </button>
 
 
@@ -1614,7 +1725,7 @@
 
 
         
-<!-- ====================AI ASSISSTANT======================= --!>
+<!-- ====================AI ASSISSTANT======================= -->
 
 <section id="assistant" class="assistant-section">
 

@@ -1,0 +1,298 @@
+{
+    "appName": "Palm Mitra",
+    "tagline": "Smart Oil-Palm Assistant",
+
+    "nav": {
+        "home": "Home",
+        "dashboard": "Dashboard",
+        "myFarm": "My Farm",
+        "weather": "Weather",
+        "activities": "Activities",
+        "leafAnalysis": "Leaf Analysis",
+        "aiAssistant": "AI Assistant",
+        "logout": "Logout"
+    },
+
+    "common": {
+        "save": "Save",
+        "cancel": "Cancel",
+        "refresh": "Refresh",
+        "loading": "Loading...",
+        "submit": "Submit",
+        "close": "Close",
+        "select": "Select",
+        "chooseImage": "Choose Image",
+        "scanLeaf": "Scan Leaf",
+        "analyzeLeaf": "Analyze Leaf",
+        "send": "Send"
+    },
+
+    "hero": {
+        "badge": "🌱 AI-Powered Agriculture",
+        "title": "Smarter Oil-Palm",
+        "titleHighlight": "Care Starts Here",
+        "description": "Palm Mitra helps oil-palm growers monitor their farm, analyze leaves, manage activities and make informed cultivation decisions.",
+        "dashboardButton": "Open Farm Dashboard"
+    },
+
+    "dashboard": {
+        "sectionLabel": "Farm Overview",
+        "title": "Your Farm Dashboard",
+        "description": "A quick overview of your oil-palm plantation and current farm conditions.",
+
+        "farmArea": "Farm Area",
+        "palmCount": "Palm Count",
+        "waterSource": "Water Source",
+        "plantation": "Plantation",
+
+        "notSet": "Not set",
+        "acres": "acres",
+
+        "farmStatus": "Farm Status",
+        "currentOverview": "Current Overview",
+        "notConfigured": "Not configured",
+
+        "location": "Location",
+        "soilType": "Soil Type",
+        "irrigation": "Irrigation",
+        "plantationDate": "Plantation Date",
+
+        "quickActions": "Quick Actions",
+        "manageFarm": "Manage Your Farm",
+        "farmProfile": "🌱 Farm Profile",
+        "weather": "🌦️ Weather",
+        "activities": "📅 Activities",
+        "analyzeLeaf": "🔬 Analyze Leaf"
+    },
+
+    "farm": {
+        "sectionLabel": "Farm Profile",
+        "title": "My Farm",
+        "description": "Enter your plantation details so Palm Mitra can provide more relevant guidance.",
+
+        "farmName": "Farm Name",
+        "farmLocation": "Farm Location",
+        "farmArea": "Farm Area (acres)",
+        "palmCount": "Number of Palms",
+        "plantationType": "Plantation Type",
+        "waterSource": "Water Source",
+        "irrigationType": "Irrigation Type",
+        "soilType": "Soil Type",
+        "plantationDate": "Plantation Date",
+
+        "saveProfile": "Save Farm Profile",
+        "saved": "Farm profile saved successfully.",
+        "required": "Please fill in the required farm details.",
+
+        "placeholders": {
+            "farmName": "Example: Green Palm Farm",
+            "location": "Example: Hyderabad, Telangana",
+            "area": "Example: 2",
+            "palmCount": "Example: 265"
+        },
+
+        "options": {
+            "plantationType": {
+                "select": "Select plantation type",
+                "commercial": "Commercial",
+                "smallholder": "Smallholder",
+                "nursery": "Nursery",
+                "newPlantation": "New Plantation"
+            },
+
+            "waterSource": {
+                "select": "Select water source",
+                "borewell": "Borewell",
+                "canal": "Canal",
+                "rainwater": "Rainwater",
+                "river": "River",
+                "other": "Other"
+            },
+
+            "irrigation": {
+                "select": "Select irrigation type",
+                "drip": "Drip",
+                "sprinkler": "Sprinkler",
+                "flood": "Flood / Surface",
+                "manual": "Manual",
+                "rainfed": "Rainfed"
+            },
+
+            "soil": {
+                "select": "Select soil type",
+                "red": "Red Soil",
+                "black": "Black Soil",
+                "sandy": "Sandy Soil",
+                "loamy": "Loamy Soil",
+                "clay": "Clay Soil",
+                "unknown": "Unknown"
+            }
+        }
+    },
+
+    "weather": {
+        "sectionLabel": "Live Weather",
+        "title": "Farm Weather",
+        "description": "Current weather conditions for your farm location.",
+
+        "currentConditions": "Current Conditions",
+        "farmLocation": "Farm Location",
+        "weatherCondition": "Loading weather...",
+        "feelsLike": "Feels like",
+        "refresh": "↻ Refresh Weather",
+
+        "humidity": "Humidity",
+        "windSpeed": "Wind Speed",
+        "cloudiness": "Cloudiness",
+
+        "loading": "Loading current weather...",
+        "unavailable": "Weather unavailable",
+        "error": "Please check your farm location and try again.",
+
+        "noFarm": "Please save your farm profile first.",
+        "noLocation": "Please add your farm location in My Farm."
+    },
+
+    "irrigation": {
+        "sectionLabel": "Smart Advisory",
+        "title": "Weather-Based Irrigation Guidance",
+        "description": "A simple advisory based on current weather and your farm conditions.",
+
+        "currentAdvisory": "Current Advisory",
+        "waiting": "Waiting for weather data...",
+        "reason": "Weather information will be used to generate the advisory.",
+
+        "whatToDo": "What to do",
+
+        "actions": {
+            "soilMoisture": "Check current soil moisture before irrigation.",
+            "rainfall": "Consider recent rainfall and drainage conditions."
+        }
+    },
+
+    "activities": {
+        "sectionLabel": "Farm Management",
+        "title": "Farm Activities",
+        "description": "Plan, track and monitor important oil-palm plantation activities.",
+
+        "totalActivities": "Total Activities",
+        "pending": "Pending",
+        "completed": "Completed",
+        "upcoming": "Upcoming",
+
+        "planner": "Activity Planner",
+        "addActivity": "Add Farm Activity",
+
+        "activity": "Activity",
+        "date": "Date",
+        "notes": "Notes",
+
+        "selectActivity": "Select activity",
+        "optionalNotes": "Optional notes",
+        "addButton": "+ Add Activity",
+
+        "options": {
+            "soilTesting": "Soil Testing",
+            "irrigationDrainage": "Irrigation & Drainage",
+            "nutrientManagement": "Nutrient Management",
+            "weedManagement": "Weed Management",
+            "pestDiseaseMonitoring": "Pest & Disease Monitoring",
+            "leafMonitoring": "Leaf Monitoring"
+        },
+
+        "smartSuggestions": "Smart Suggestions",
+        "recommendedTitle": "Recommended Farm Activities",
+        "recommendedDescription": "Activities suggested based on your farm profile.",
+
+        "checkingProfile": "Checking your farm profile...",
+        "recommendationsAppear": "Recommendations will appear here.",
+
+        "calendar": "Activity Calendar",
+        "calendarTitle": "Farm Activity Calendar",
+        "calendarDescription": "View and manage your scheduled cultivation activities.",
+
+        "noActivities": "No activities scheduled yet.",
+        "addActivityHint": "Add an activity above to start planning your farm work."
+    },
+
+    "leafAnalysis": {
+        "sectionLabel": "AI Leaf Analysis",
+        "title": "Check Your Oil-Palm Leaf",
+        "description": "Upload a clear photo of an oil-palm leaf for AI-based screening and guidance.",
+
+        "uploadTitle": "Upload Leaf Image",
+        "fileTypes": "JPG, PNG or WEBP",
+        "chooseImage": "Choose Image",
+
+        "scanTitle": "Scan Leaf",
+        "scanDescription": "Use your camera to capture a fresh oil-palm leaf image.",
+        "scanButton": "Scan Leaf",
+
+        "cameraTitle": "Scan Oil-Palm Leaf",
+        "capture": "📸 Capture Leaf",
+        "closeCamera": "Close Camera",
+
+        "selectedImage": "Selected Image",
+
+        "analyze": "Analyze Leaf",
+        "analyzing": "Analyzing your leaf...",
+        "analysisTime": "This may take a few seconds.",
+
+        "analysisComplete": "Analysis Complete",
+        "resultTitle": "Leaf Analysis Result",
+
+        "screening": "Screening",
+        "confidence": "Confidence",
+        "nutrientDetection": "Nutrient Detection",
+        "status": "Status",
+
+        "whatFound": "What Palm Mitra Found",
+
+        "recommendation": "Recommended Next Steps",
+        "nextStep": "Next step:",
+
+        "errorTitle": "Something went wrong",
+        "tryAgain": "Please try again.",
+
+        "weatherAlt": "Weather condition",
+        "leafAlt": "Selected oil-palm leaf"
+    },
+
+    "assistant": {
+        "sectionLabel": "AI Assistant",
+        "title": "Ask Palm Mitra",
+
+        "greeting": "Namaste! 🌱 I'm Palm Mitra. How can I help you today?",
+
+        "placeholder": "Ask your question...",
+        "send": "Send",
+
+        "thinking": "Palm Mitra is thinking..."
+    },
+
+    "about": {
+        "sectionLabel": "About Palm Mitra",
+        "title": "AI Assistance for Oil-Palm Cultivation",
+        "description": "Palm Mitra combines machine learning, nutrient-pattern detection and farmer-friendly recommendations to support oil-palm cultivation.",
+
+        "leafScreening": {
+            "title": "AI Leaf Screening",
+            "description": "Screens oil-palm leaves for healthy or abnormal patterns."
+        },
+
+        "nutrientDetection": {
+            "title": "Nutrient Detection",
+            "description": "Checks abnormal leaves for possible nutrient-deficiency patterns."
+        },
+
+        "guidance": {
+            "title": "Practical Guidance",
+            "description": "Converts analysis results into simple field-level next steps."
+        }
+    },
+
+    "footer": {
+        "description": "Smart assistance for better oil-palm cultivation.",
+        "copyright": "Palm Mitra • AI Agriculture Project"
+    }
+}

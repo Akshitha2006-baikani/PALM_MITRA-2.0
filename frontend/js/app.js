@@ -3,7 +3,58 @@
    Connects HTML frontend to FastAPI backend
    ========================================================= */
 
-const API_URL = "https://palm-mitra-2-0.onrender.com";
+const API_URL = "http://127.0.0.1:8000";
+
+
+/* =========================
+   AUTHENTICATION CHECK
+========================= */
+
+const token = localStorage.getItem("palmMitraToken");
+
+if (!token) {
+    window.location.href = "login.html";
+}
+
+async function verifyLogin() {
+
+    try {
+
+        const response = await fetch(
+            `${API_URL}/api/auth/me`,
+            {
+                method: "GET",
+
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
+            }
+        );
+
+        if (!response.ok) {
+
+            localStorage.removeItem("palmMitraToken");
+            localStorage.removeItem("palmMitraUser");
+
+            window.location.href = "login.html";
+
+            return null;
+        }
+
+        const data = await response.json();
+
+        return data.user;
+
+    } catch (error) {
+
+        console.error(
+            "Authentication verification failed:",
+            error
+        );
+
+        return null;
+    }
+}
 
 /* =========================================================
    Get HTML Elements
@@ -767,7 +818,7 @@ const farmSaveMessage =
 
 farmForm.addEventListener(
     "submit",
-    function (event) {
+    async function (event) {
 
         event.preventDefault();
 
@@ -844,10 +895,48 @@ farmForm.addEventListener(
            Save Locally For Now
            ----------------------------------------- */
 
-        localStorage.setItem(
-            "palmMitraFarm",
-            JSON.stringify(farm)
+     /* -----------------------------------------
+   Save Farm To Database
+   ----------------------------------------- */
+
+const token = localStorage.getItem("palmMitraToken");
+
+try {
+    const response = await fetch(
+        `${API_URL}/api/farm`,
+        {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
+            },
+            body: JSON.stringify(farm)
+        }
+    );
+
+    const data = await response.json();
+
+    if (!response.ok) {
+        console.error(
+            "Failed to save farm:",
+            data.detail || "Unknown error"
         );
+        return;
+    }
+
+    console.log(
+        "Farm saved successfully:",
+        data.farm
+    );
+
+} catch (error) {
+    console.error(
+        "Error saving farm:",
+        error
+    );
+}
+
+
 
 
         /* -----------------------------------------
@@ -871,22 +960,47 @@ farmForm.addEventListener(
    Load Existing Farm Profile
    ========================================================= */
 
-function loadFarmProfile() {
+async function loadFarmProfile() {
 
-    const savedFarm =
-        localStorage.getItem(
-            "palmMitraFarm"
-        );
+    const token =
+        localStorage.getItem("palmMitraToken");
 
-    if (!savedFarm) {
+    if (!token) {
         return;
     }
 
     try {
 
-        const farm =
-            JSON.parse(savedFarm);
+        const response = await fetch(
+            `${API_URL}/api/farm`,
+            {
+                method: "GET",
+                headers: {
+                    "Authorization": `Bearer ${token}`
+                }
+            }
+        );
 
+        const data = await response.json();
+
+        if (!response.ok) {
+
+            console.error(
+                "Could not load farm profile:",
+                data.detail || "Unknown error"
+            );
+
+            return;
+        }
+
+        const farm = data.farm;
+
+        if (!farm) {
+            console.log(
+                "No farm profile found for this user."
+            );
+            return;
+        }
 
         document.getElementById(
             "farmName"
@@ -950,7 +1064,6 @@ function loadFarmProfile() {
             "Could not load farm profile:",
             error
         );
-
     }
 }
 
@@ -1038,47 +1151,112 @@ loadWeather();
    WEATHER
    ========================================================= */
 
+/* =========================================================
+   WEATHER
+   ========================================================= */
+
 async function loadWeather() {
 
-    const savedFarm =
-        localStorage.getItem("palmMitraFarm");
+    const token =
+        localStorage.getItem("palmMitraToken");
 
-    if (!savedFarm) {
-
-        if (weatherError) {
-            weatherError.textContent =
-                "Please save your farm profile first.";
-            weatherError.classList.remove("hidden");
-        }
-
+    if (!token) {
         return;
     }
+
+
+    /* -----------------------------------------
+       Get Farm Profile From Database
+       ----------------------------------------- */
 
     let farm;
 
     try {
 
-        farm = JSON.parse(savedFarm);
+        const farmResponse =
+            await fetch(
+                `${API_URL}/api/farm`,
+                {
+                    method: "GET",
+                    headers: {
+                        "Authorization": `Bearer ${token}`
+                    }
+                }
+            );
+
+
+        const farmData =
+            await farmResponse.json();
+
+
+        if (!farmResponse.ok) {
+
+            throw new Error(
+                farmData.detail ||
+                "Could not load farm profile."
+            );
+        }
+
+
+        farm =
+            farmData.farm;
+
 
     } catch (error) {
 
         console.error(
-            "Could not read farm profile:",
+            "Could not load farm profile for weather:",
             error
         );
+
+        if (weatherError) {
+
+            weatherError.textContent =
+                "Could not load your farm profile. Please try again.";
+
+            weatherError.classList.remove(
+                "hidden"
+            );
+        }
 
         return;
     }
 
+
+    /* -----------------------------------------
+       Check Farm Location
+       ----------------------------------------- */
+
+    if (!farm) {
+
+        if (weatherError) {
+
+            weatherError.textContent =
+                "Please save your farm profile first.";
+
+            weatherError.classList.remove(
+                "hidden"
+            );
+        }
+
+        return;
+    }
+
+
     const city =
         farm.location;
+
 
     if (!city) {
 
         if (weatherError) {
+
             weatherError.textContent =
                 "Please add your farm location in My Farm.";
-            weatherError.classList.remove("hidden");
+
+            weatherError.classList.remove(
+                "hidden"
+            );
         }
 
         return;
@@ -1097,6 +1275,10 @@ async function loadWeather() {
         weatherError.classList.add("hidden");
     }
 
+
+    /* -----------------------------------------
+       Get Weather
+       ----------------------------------------- */
 
     try {
 
@@ -1562,42 +1744,16 @@ const recommendedActivities =
     );
 
 
-function generateFarmSuggestions() {
+async function generateFarmSuggestions() {
 
     if (!recommendedActivities) {
         return;
     }
 
+    const token =
+        localStorage.getItem("palmMitraToken");
 
-    const savedFarm =
-        localStorage.getItem(
-            "palmMitraFarm"
-        );
-
-
-    if (!savedFarm) {
-
-        recommendedActivities.innerHTML = `
-
-            <div class="empty-activities">
-
-                <span>
-                    🌱
-                </span>
-
-                <p>
-                    Complete your farm profile first.
-                </p>
-
-                <small>
-                    Palm Mitra will generate suggestions
-                    from your farm information.
-                </small>
-
-            </div>
-
-        `;
-
+    if (!token) {
         return;
     }
 
@@ -1606,13 +1762,67 @@ function generateFarmSuggestions() {
 
     try {
 
+        const response =
+            await fetch(
+                `${API_URL}/api/farm`,
+                {
+                    method: "GET",
+                    headers: {
+                        "Authorization": `Bearer ${token}`
+                    }
+                }
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (!response.ok) {
+
+            console.error(
+                "Could not load farm profile:",
+                data.detail || "Unknown error"
+            );
+
+            return;
+        }
+
+
         farm =
-            JSON.parse(savedFarm);
+            data.farm;
+
+
+        if (!farm) {
+
+            recommendedActivities.innerHTML = `
+
+                <div class="empty-activities">
+
+                    <span>
+                        🌱
+                    </span>
+
+                    <p>
+                        Complete your farm profile first.
+                    </p>
+
+                    <small>
+                        Palm Mitra will generate suggestions
+                        from your farm information.
+                    </small>
+
+                </div>
+
+            `;
+
+            return;
+        }
 
     } catch (error) {
 
         console.error(
-            "Could not read farm profile:",
+            "Could not load farm profile:",
             error
         );
 
@@ -2297,7 +2507,7 @@ if (chatForm) {
         try {
 
             const response = await fetch(
-                "http://127.0.0.1:8000/api/chat",
+                `${API_URL}/api/chat`,
                 {
                     method: "POST",
 
@@ -2376,3 +2586,219 @@ if (chatForm) {
     });
 
 }
+
+/* =========================
+   USER + LOGOUT
+========================= */
+
+async function loadLoggedInUser() {
+
+    const user = await verifyLogin();
+
+    if (!user) {
+        return;
+    }
+
+}
+
+
+/* =========================
+   LOGOUT
+========================= */
+
+const logoutButton =
+    document.getElementById("logoutButton");
+
+if (logoutButton) {
+
+    logoutButton.addEventListener(
+        "click",
+        function () {
+
+            localStorage.removeItem(
+                "palmMitraToken"
+            );
+
+            localStorage.removeItem(
+                "palmMitraUser"
+            );
+
+            window.location.href =
+                "login.html";
+        }
+    );
+}
+
+/* =========================================================
+   MULTILINGUAL SUPPORT
+   ========================================================= */
+
+const languageSelect =
+    document.getElementById("languageSelect");
+
+
+async function loadLanguage(language) {
+
+    try {
+
+        const response =
+            await fetch(
+                `../translations/${language}.json`
+            );
+
+        if (!response.ok) {
+
+            throw new Error(
+                `Could not load ${language} translation.`
+            );
+        }
+
+        const translations =
+            await response.json();
+
+
+        /*
+         * Get translated value from nested JSON
+         *
+         * Example:
+         * "farm.placeholders.farmName"
+         */
+        function getTranslation(key) {
+
+            const keys = key.split(".");
+
+            let value = translations;
+
+            keys.forEach(function (part) {
+
+                if (
+                    value !== undefined &&
+                    value !== null
+                ) {
+                    value = value[part];
+                }
+
+            });
+
+            return value;
+        }
+
+
+        /*
+         * Translate normal text
+         */
+        document
+            .querySelectorAll("[data-i18n]")
+            .forEach(function (element) {
+
+                const key =
+                    element.getAttribute(
+                        "data-i18n"
+                    );
+
+                const value =
+                    getTranslation(key);
+
+                if (
+                    value !== undefined &&
+                    value !== null
+                ) {
+
+                    element.textContent = value;
+
+                }
+
+            });
+
+
+        /*
+         * Translate input placeholders
+         */
+        document
+            .querySelectorAll(
+                "[data-i18n-placeholder]"
+            )
+            .forEach(function (element) {
+
+                const key =
+                    element.getAttribute(
+                        "data-i18n-placeholder"
+                    );
+
+                const value =
+                    getTranslation(key);
+
+                if (
+                    value !== undefined &&
+                    value !== null
+                ) {
+
+                    element.placeholder = value;
+
+                }
+
+            });
+
+
+        /*
+         * Translate alt text
+         */
+        document
+            .querySelectorAll(
+                "[data-i18n-alt]"
+            )
+            .forEach(function (element) {
+
+                const key =
+                    element.getAttribute(
+                        "data-i18n-alt"
+                    );
+
+                const value =
+                    getTranslation(key);
+
+                if (
+                    value !== undefined &&
+                    value !== null
+                ) {
+
+                    element.alt = value;
+
+                }
+
+            });
+
+
+        console.log(
+            "Language applied:",
+            language
+        );
+
+    } catch (error) {
+
+        console.error(
+            "Language loading error:",
+            error
+        );
+
+    }
+
+}
+
+if (languageSelect) {
+
+    languageSelect.addEventListener(
+        "change",
+        function () {
+
+            loadLanguage(
+                languageSelect.value
+            );
+
+        }
+    );
+
+}
+
+
+

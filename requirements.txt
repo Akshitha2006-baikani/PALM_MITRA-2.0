@@ -1,0 +1,11 @@
+fastapi==0.141.1
+uvicorn==0.53.0
+python-multipart==0.0.32
+python-dotenv==1.2.3
+google-genai==2.24.0
+requests==2.34.2
+numpy==2.5.3
+pillow==12.3.0
+torch==2.14.0
+torchvision==0.29.0
+ultralytics==8.4.155

@@ -1,0 +1,10 @@
+.env
+__pycache__/
+*.pyc
+.pytest_cache/
+backend/uploads/
+.venv/
+venv/
+node_modules/
+.DS_Store
+test_leaf.jpg

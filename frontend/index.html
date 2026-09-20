@@ -1,0 +1,1798 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Palm Mitra - Smart AI-powered oil-palm cultivation assistant."
+    >
+
+    <title>Palm Mitra | Smart Oil-Palm Assistant</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+<body>
+
+    <!-- =====================================================
+         NAVBAR
+         ===================================================== -->
+
+    <header class="navbar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                🌴
+            </div>
+
+            <div>
+
+                <h1>Palm Mitra</h1>
+
+                <p>Smart Oil-Palm Assistant</p>
+
+            </div>
+
+        </div>
+
+        <nav>
+
+            <a href="#home">Home</a>
+
+            <a href="#dashboard">Dashboard</a>
+
+            <a href="#farm">My Farm</a>
+
+            <a href="#weather">Weather</a>
+
+            <a href="#activities">Activities</a>
+
+            <a href="#analyze">Leaf Analysis</a>
+
+            <a href="#assistant">AI Assistant</a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- =================================================
+             HERO
+             ================================================= -->
+   
+        <section
+            id="home"
+            class="hero"
+        >
+
+            <div class="hero-content">
+
+                <span class="badge">
+                    🌱 AI-Powered Agriculture
+                </span>
+
+                <h2>
+                    Smarter Oil-Palm
+                    <span>Care Starts Here</span>
+                </h2>
+
+                <p>
+                    Palm Mitra helps oil-palm growers
+                    monitor their farm, analyze leaves,
+                    manage activities and make informed
+                    cultivation decisions.
+                </p>
+
+                <a
+                    href="#dashboard"
+                    class="primary-button"
+                >
+                    Open Farm Dashboard
+                </a>
+
+            </div>
+
+            <div class="hero-visual">
+
+                <div class="palm-circle">
+
+                    <div class="palm-emoji">
+                        🌴
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             DASHBOARD
+             ================================================= -->
+
+        <section
+            id="dashboard"
+            class="dashboard-section"
+        >
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    Farm Overview
+                </span>
+
+                <h2>
+                    Your Farm Dashboard
+                </h2>
+
+                <p>
+                    A quick overview of your oil-palm
+                    plantation and current farm conditions.
+                </p>
+
+            </div>
+
+
+            <!-- FARM SUMMARY CARDS -->
+
+            <div class="dashboard-grid">
+
+                <div class="dashboard-card">
+
+                    <div class="dashboard-icon">
+                        📐
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Farm Area
+                        </span>
+
+                        <strong id="dashboardArea">
+                            0 acres
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-card">
+
+                    <div class="dashboard-icon">
+                        🌴
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Palm Count
+                        </span>
+
+                        <strong id="dashboardPalms">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-card">
+
+                    <div class="dashboard-icon">
+                        💧
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Water Source
+                        </span>
+
+                        <strong id="dashboardWater">
+                            Not set
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-card">
+
+                    <div class="dashboard-icon">
+                        🌱
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Plantation
+                        </span>
+
+                        <strong id="dashboardType">
+                            Not set
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUICK STATUS -->
+
+            <div class="dashboard-panels">
+
+                <div class="dashboard-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="section-label">
+                                Farm Status
+                            </span>
+
+                            <h3>
+                                Current Overview
+                            </h3>
+
+                        </div>
+
+                        <span
+                            id="farmStatusBadge"
+                            class="status-badge"
+                        >
+                            Not configured
+                        </span>
+
+                    </div>
+
+                    <div class="farm-status-list">
+
+                        <div>
+
+                            <span>
+                                Location
+                            </span>
+
+                            <strong id="dashboardLocation">
+                                Not set
+                            </strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Soil Type
+                            </span>
+
+                            <strong id="dashboardSoil">
+                                Not set
+                            </strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Irrigation
+                            </span>
+
+                            <strong id="dashboardIrrigation">
+                                Not set
+                            </strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Plantation Date
+                            </span>
+
+                            <strong id="dashboardDate">
+                                Not set
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="section-label">
+                                Quick Actions
+                            </span>
+
+                            <h3>
+                                Manage Your Farm
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                    <div class="quick-actions">
+
+                        <a href="#farm">
+                            🌱 Farm Profile
+                        </a>
+
+                        <a href="#weather">
+                            🌦️ Weather
+                        </a>
+
+                        <a href="#activities">
+                            📅 Activities
+                        </a>
+
+                        <a href="#analyze">
+                            🔬 Analyze Leaf
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             MY FARM
+             ================================================= -->
+
+        <section
+            id="farm"
+            class="farm-section"
+        >
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    Farm Profile
+                </span>
+
+                <h2>
+                    My Farm
+                </h2>
+
+                <p>
+                    Enter your plantation details so Palm Mitra
+                    can provide more relevant guidance.
+                </p>
+
+            </div>
+
+
+            <div class="farm-card">
+
+                <form id="farmForm">
+
+
+                    <!-- FARM NAME -->
+
+                    <div class="form-group">
+
+                        <label for="farmName">
+                            Farm Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="farmName"
+                            placeholder="Example: Green Palm Farm"
+                        >
+
+                    </div>
+
+
+                    <!-- LOCATION -->
+
+                    <div class="form-group">
+
+                        <label for="farmLocation">
+                            Farm Location
+                        </label>
+
+                        <input
+                            type="text"
+                            id="farmLocation"
+                            placeholder="Example: Hyderabad, Telangana"
+                        >
+
+                    </div>
+
+
+                    <div class="form-row">
+
+
+                        <!-- AREA -->
+
+                        <div class="form-group">
+
+                            <label for="farmArea">
+                                Farm Area (acres)
+                            </label>
+
+                            <input
+                                type="number"
+                                id="farmArea"
+                                min="0"
+                                step="0.1"
+                                placeholder="Example: 2"
+                            >
+
+                        </div>
+
+
+                        <!-- PALMS -->
+
+                        <div class="form-group">
+
+                            <label for="palmCount">
+                                Number of Palms
+                            </label>
+
+                            <input
+                                type="number"
+                                id="palmCount"
+                                min="0"
+                                placeholder="Example: 265"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+
+                        <!-- PLANTATION TYPE -->
+
+                        <div class="form-group">
+
+                            <label for="plantationType">
+                                Plantation Type
+                            </label>
+
+                            <select id="plantationType">
+
+                                <option value="">
+                                    Select plantation type
+                                </option>
+
+                                <option value="Commercial">
+                                    Commercial
+                                </option>
+
+                                <option value="Smallholder">
+                                    Smallholder
+                                </option>
+
+                                <option value="Nursery">
+                                    Nursery
+                                </option>
+
+                                <option value="New Plantation">
+                                    New Plantation
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- WATER -->
+
+                        <div class="form-group">
+
+                            <label for="waterSource">
+                                Water Source
+                            </label>
+
+                            <select id="waterSource">
+
+                                <option value="">
+                                    Select water source
+                                </option>
+
+                                <option value="Borewell">
+                                    Borewell
+                                </option>
+
+                                <option value="Canal">
+                                    Canal
+                                </option>
+
+                                <option value="Rainwater">
+                                    Rainwater
+                                </option>
+
+                                <option value="River">
+                                    River
+                                </option>
+
+                                <option value="Other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+
+                        <!-- IRRIGATION -->
+
+                        <div class="form-group">
+
+                            <label for="irrigationType">
+                                Irrigation Type
+                            </label>
+
+                            <select id="irrigationType">
+
+                                <option value="">
+                                    Select irrigation type
+                                </option>
+
+                                <option value="Drip">
+                                    Drip
+                                </option>
+
+                                <option value="Sprinkler">
+                                    Sprinkler
+                                </option>
+
+                                <option value="Flood">
+                                    Flood / Surface
+                                </option>
+
+                                <option value="Manual">
+                                    Manual
+                                </option>
+
+                                <option value="Rainfed">
+                                    Rainfed
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- SOIL -->
+
+                        <div class="form-group">
+
+                            <label for="soilType">
+                                Soil Type
+                            </label>
+
+                            <select id="soilType">
+
+                                <option value="">
+                                    Select soil type
+                                </option>
+
+                                <option value="Red Soil">
+                                    Red Soil
+                                </option>
+
+                                <option value="Black Soil">
+                                    Black Soil
+                                </option>
+
+                                <option value="Sandy Soil">
+                                    Sandy Soil
+                                </option>
+
+                                <option value="Loamy Soil">
+                                    Loamy Soil
+                                </option>
+
+                                <option value="Clay Soil">
+                                    Clay Soil
+                                </option>
+
+                                <option value="Unknown">
+                                    Unknown
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PLANTATION DATE -->
+
+                    <div class="form-group">
+
+                        <label for="plantationDate">
+                            Plantation Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="plantationDate"
+                        >
+
+                    </div>
+
+
+                    <!-- SAVE -->
+
+                    <button
+                        type="submit"
+                        class="primary-button"
+                    >
+                        Save Farm Profile
+                    </button>
+
+
+                    <p
+                        id="farmSaveMessage"
+                        class="save-message"
+                    ></p>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             WEATHER
+             ================================================= -->
+
+       <!-- =================================================
+     WEATHER
+     ================================================= -->
+
+<section
+    id="weather"
+    class="weather-section"
+>
+
+    <div class="section-heading">
+
+        <span class="section-label">
+            Live Weather
+        </span>
+
+        <h2>
+            Farm Weather
+        </h2>
+
+        <p>
+            Current weather conditions for your farm location.
+        </p>
+
+    </div>
+
+
+    <div class="weather-dashboard">
+
+        <!-- WEATHER HEADER -->
+
+        <div class="weather-main-card">
+
+            <div class="weather-main-info">
+
+                <span class="section-label">
+                    Current Conditions
+                </span>
+
+                <h3 id="weatherLocation">
+                    Farm Location
+                </h3>
+
+                <div class="temperature-row">
+
+                    <img
+                        id="weatherIcon"
+                        class="weather-api-icon hidden"
+                        src=""
+                        alt="Weather condition"
+                    >
+
+                    <strong id="weatherTemperature">
+                        —
+                    </strong>
+
+                </div>
+
+                <p id="weatherCondition">
+                    Loading weather...
+                </p>
+
+                <p class="feels-like">
+                    Feels like
+                    <strong id="weatherFeelsLike">
+                        —
+                    </strong>
+                </p>
+
+            </div>
+
+
+            <div class="weather-refresh">
+
+                <button
+                    type="button"
+                    id="refreshWeatherButton"
+                    class="secondary-button"
+                >
+                    ↻ Refresh Weather
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- WEATHER DETAILS -->
+
+        <div class="weather-details-grid">
+
+            <div class="weather-detail-card">
+
+                <span class="weather-detail-icon">
+                    💧
+                </span>
+
+                <div>
+
+                    <span>
+                        Humidity
+                    </span>
+
+                    <strong id="weatherHumidity">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="weather-detail-card">
+
+                <span class="weather-detail-icon">
+                    🌬️
+                </span>
+
+                <div>
+
+                    <span>
+                        Wind Speed
+                    </span>
+
+                    <strong id="weatherWind">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="weather-detail-card">
+
+                <span class="weather-detail-icon">
+                    ☁️
+                </span>
+
+                <div>
+
+                    <span>
+                        Cloudiness
+                    </span>
+
+                    <strong id="weatherCloudiness">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- LOADING -->
+
+        <div
+            id="weatherLoading"
+            class="weather-loading hidden"
+        >
+
+            <div class="spinner"></div>
+
+            <p>
+                Loading current weather...
+            </p>
+
+        </div>
+
+
+        <!-- ERROR -->
+
+        <div
+            id="weatherError"
+            class="weather-error hidden"
+        >
+
+            <strong>
+                Weather unavailable
+            </strong>
+
+            <p>
+                Please check your farm location and try again.
+            </p>
+
+        </div>
+
+    </div>
+<!-- =================================================
+     IRRIGATION GUIDANCE
+     ================================================= -->
+
+<div class="irrigation-guidance-card">
+
+    <div class="section-heading">
+        <span class="section-label">
+            Smart Advisory
+        </span>
+
+        <h3>
+            Weather-Based Irrigation Guidance
+        </h3>
+
+        <p>
+            A simple advisory based on current weather
+            and your farm conditions.
+        </p>
+    </div>
+
+    <div class="irrigation-status">
+
+        <div class="irrigation-icon">
+            💧
+        </div>
+
+        <div>
+            <span class="irrigation-label">
+                Current Advisory
+            </span>
+
+            <h4 id="irrigationAdvice">
+                Waiting for weather data...
+            </h4>
+
+            <p id="irrigationReason">
+                Weather information will be used to
+                generate the advisory.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="irrigation-actions">
+
+        <strong>
+            What to do
+        </strong>
+
+        <ul id="irrigationActions">
+            <li>
+                Check current soil moisture before irrigation.
+            </li>
+
+            <li>
+                Consider recent rainfall and drainage conditions.
+            </li>
+        </ul>
+
+    </div>
+
+</div>
+
+</section>
+
+
+        <!-- =================================================
+     ACTIVITIES
+     ================================================= -->
+
+<section
+    id="activities"
+    class="activities-section"
+>
+
+    <div class="section-heading">
+
+        <span class="section-label">
+            Farm Management
+        </span>
+
+        <h2>
+            Farm Activities
+        </h2>
+
+        <p>
+            Plan, track and monitor important oil-palm
+            plantation activities.
+        </p>
+
+    </div>
+
+
+    <!-- Activity Summary -->
+
+    <div class="activity-summary-grid">
+
+        <div class="activity-summary-card">
+
+            <span class="activity-summary-icon">
+                📋
+            </span>
+
+            <div>
+                <span class="summary-label">
+                    Total Activities
+                </span>
+
+                <strong id="totalActivities">
+                    0
+                </strong>
+            </div>
+
+        </div>
+
+
+        <div class="activity-summary-card">
+
+            <span class="activity-summary-icon">
+                ⏳
+            </span>
+
+            <div>
+                <span>
+                    Pending
+                </span>
+
+                <strong id="pendingActivities">
+                    0
+                </strong>
+            </div>
+
+        </div>
+
+
+        <div class="activity-summary-card">
+
+            <span class="activity-summary-icon">
+                ✅
+            </span>
+
+            <div>
+                <span>
+                    Completed
+                </span>
+
+                <strong id="completedActivities">
+                    0
+                </strong>
+            </div>
+
+        </div>
+
+
+        <div class="activity-summary-card">
+
+            <span class="activity-summary-icon">
+                📅
+            </span>
+
+            <div>
+                <span>
+                    Upcoming
+                </span>
+
+                <strong id="upcomingActivities">
+                    0
+                </strong>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Add Activity -->
+
+    <div class="activity-planner-card">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                Activity Planner
+            </span>
+
+            <h3>
+                Add Farm Activity
+            </h3>
+
+        </div>
+
+
+        <form id="activityForm">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label for="activityName">
+                        Activity
+                    </label>
+
+                    <select id="activityName" required>
+
+                        <option value="">
+                            Select activity
+                        </option>
+
+                        <option value="Soil Testing">
+                            Soil Testing
+                        </option>
+
+                        <option value="Irrigation & Drainage">
+                            Irrigation & Drainage
+                        </option>
+
+                        <option value="Nutrient Management">
+                            Nutrient Management
+                        </option>
+
+                        <option value="Weed Management">
+                            Weed Management
+                        </option>
+
+                        <option value="Pest & Disease Monitoring">
+                            Pest & Disease Monitoring
+                        </option>
+
+                        <option value="Leaf Monitoring">
+                            Leaf Monitoring
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="activityDate">
+                        Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="activityDate"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="activityNotes">
+                        Notes
+                    </label>
+
+                    <input
+                        type="text"
+                        id="activityNotes"
+                        placeholder="Optional notes"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="primary-button"
+            >
+                + Add Activity
+            </button>
+
+        </form>
+
+        <p
+            id="activitySaveMessage"
+            class="form-message"
+        ></p>
+
+    </div>
+
+<!-- =================================================
+         RECOMMENDED FARM ACTIVITIES
+         ================================================= -->
+
+    <div class="recommended-activities-card">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                Smart Suggestions
+            </span>
+
+            <h3>
+                Recommended Farm Activities
+            </h3>
+
+            <p>
+                Activities suggested based on your
+                farm profile.
+            </p>
+
+        </div>
+
+
+        <div
+            id="recommendedActivities"
+            class="recommended-activities-list"
+        >
+
+            <div class="empty-activities">
+
+                <span>
+                    🌱
+                </span>
+
+                <p>
+                    Checking your farm profile...
+                </p>
+
+                <small>
+                    Recommendations will appear here.
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         ACTIVITY CALENDAR
+         ================================================= -->
+
+    <div class="activity-calendar-card">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                Activity Calendar
+            </span>
+
+            <h3>
+                Farm Activity Calendar
+            </h3>
+
+            <p>
+                View and manage your scheduled
+                cultivation activities.
+            </p>
+
+        </div>
+
+
+        <div
+            id="activityList"
+            class="activity-list"
+        >
+
+            <div class="empty-activities">
+
+                <span>
+                    📅
+                </span>
+
+                <p>
+                    No activities scheduled yet.
+                </p>
+
+                <small>
+                    Add an activity above to start
+                    planning your farm work.
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+        <!-- =================================================
+             LEAF ANALYSIS
+             ================================================= -->
+
+        <section
+            id="analyze"
+            class="analysis-section"
+        >
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    AI Leaf Analysis
+                </span>
+
+                <h2>
+                    Check Your Oil-Palm Leaf
+                </h2>
+
+                <p>
+                    Upload a clear photo of an oil-palm leaf
+                    for AI-based screening and guidance.
+                </p>
+
+            </div>
+
+<!-- Upload + Scan Options -->
+<div class="analysis-options">
+
+    <!-- Upload Image -->
+    <div
+        id="uploadArea"
+        class="upload-area analysis-option"
+    >
+
+        <div class="upload-icon">
+            📁
+        </div>
+
+        <h3>
+            Upload Leaf Image
+        </h3>
+
+        <p>
+            JPG, PNG or WEBP
+        </p>
+
+        <input
+            type="file"
+            id="leafInput"
+            accept="image/jpeg,image/png,image/webp"
+            hidden
+        >
+
+        <button
+            type="button"
+            id="chooseButton"
+            class="secondary-button"
+        >
+            Choose Image
+        </button>
+
+        <div
+            id="fileName"
+            class="file-name"
+        ></div>
+
+    </div>
+
+
+    <!-- Scan Leaf -->
+    <div
+        id="scanArea"
+        class="upload-area analysis-option"
+    >
+
+        <div class="upload-icon">
+            📷
+        </div>
+
+        <h3>
+            Scan Leaf
+        </h3>
+
+        <p>
+            Use your camera to capture a fresh
+            oil-palm leaf image.
+        </p>
+
+        <button
+            type="button"
+            id="scanButton"
+            class="secondary-button"
+        >
+            Scan Leaf
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- Camera Container -->
+<div
+    id="cameraContainer"
+    class="camera-container hidden"
+>
+
+    <h3>
+        Scan Oil-Palm Leaf
+    </h3>
+
+    <video
+        id="cameraPreview"
+        autoplay
+        playsinline
+    ></video>
+
+    <div class="camera-controls">
+
+        <button
+            type="button"
+            id="captureButton"
+            class="analyze-button"
+        >
+            📸 Capture Leaf
+        </button>
+
+        <button
+            type="button"
+            id="closeCameraButton"
+            class="secondary-button"
+        >
+            Close Camera
+        </button>
+
+    </div>
+
+    <canvas
+        id="cameraCanvas"
+        class="hidden"
+    ></canvas>
+
+</div>
+
+
+                <div
+                    id="previewContainer"
+                    class="preview-container hidden"
+                >
+
+                    <h3>
+                        Selected Image
+                    </h3>
+
+                    <img
+                        id="imagePreview"
+                        src=""
+                        alt="Selected oil-palm leaf"
+                    >
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="analyzeButton"
+                    class="analyze-button"
+                    disabled
+                >
+                    Analyze Leaf
+                </button>
+
+
+                <div
+                    id="loading"
+                    class="loading hidden"
+                >
+
+                    <div class="spinner"></div>
+
+                    <p>
+                        Analyzing your leaf...
+                    </p>
+
+                    <span>
+                        This may take a few seconds.
+                    </span>
+
+                </div>
+
+
+                <div
+                    id="result"
+                    class="result hidden"
+                >
+
+                    <div class="result-header">
+
+                        <span class="section-label">
+                            Analysis Complete
+                        </span>
+
+                        <h3>
+                            Leaf Analysis Result
+                        </h3>
+
+                    </div>
+
+
+                    <div class="result-grid">
+
+                        <div class="result-item">
+
+                            <span>
+                                Screening
+                            </span>
+
+                            <strong id="screeningResult">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="result-item">
+
+                            <span>
+                                Confidence
+                            </span>
+
+                            <strong id="confidenceResult">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="result-item">
+
+                            <span>
+                                Nutrient Detection
+                            </span>
+
+                            <strong id="nutrientResult">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="result-item">
+
+                            <span>
+                                Status
+                            </span>
+
+                            <strong id="statusResult">
+                                —
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="result-message">
+
+                        <h4>
+                            What Palm Mitra Found
+                        </h4>
+
+                        <p id="analysisMessage">
+                            —
+                        </p>
+
+                    </div>
+
+
+                    <div class="recommendation">
+
+                        <div class="recommendation-header">
+
+                            <span class="recommendation-icon">
+                                💡
+                            </span>
+
+                            <div>
+
+                                <h4>
+                                    Recommended Next Steps
+                                </h4>
+
+                                <span
+                                    id="priorityResult"
+                                    class="priority"
+                                >
+                                    —
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <p id="recommendationSummary">
+                            —
+                        </p>
+
+
+                        <ul id="recommendationActions">
+                        </ul>
+
+
+                        <div class="next-step">
+
+                            <strong>
+                                Next step:
+                            </strong>
+
+                            <span id="nextStep">
+                                —
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="error"
+                    class="error hidden"
+                >
+
+                    <strong>
+                        Something went wrong
+                    </strong>
+
+                    <p id="errorMessage">
+                        Please try again.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        
+<!-- ====================AI ASSISSTANT======================= --!>
+
+<section id="assistant" class="assistant-section">
+
+    <div class="section-heading">
+        <h2>Ask Palm Mitra</h2>
+    </div>
+
+    <div class="assistant-card">
+
+        <div id="chatMessages" class="chat-messages">
+
+            <div class="chat-message assistant-message">
+                <div class="message-content">
+                    <p>
+                        Namaste! 🌱 I'm Palm Mitra.
+                        How can I help you today?
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <form id="chatForm" class="chat-input-area">
+
+            <input
+                type="text"
+                id="chatInput"
+                placeholder="Ask your question..."
+                autocomplete="off"
+            >
+
+            <button
+                type="submit"
+                id="chatSendButton"
+                class="primary-button"
+            >
+                Send
+            </button>
+
+        </form>
+
+        <div id="chatLoading" class="chat-loading hidden">
+            <span class="spinner"></span>
+            <span>Palm Mitra is thinking...</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+        <!-- =================================================
+             ABOUT
+             ================================================= -->
+
+        <section
+            id="about"
+            class="about-section"
+        >
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    About Palm Mitra
+                </span>
+
+                <h2>
+                    AI Assistance for Oil-Palm Cultivation
+                </h2>
+
+                <p>
+                    Palm Mitra combines machine learning,
+                    nutrient-pattern detection and
+                    farmer-friendly recommendations
+                    to support oil-palm cultivation.
+                </p>
+
+            </div>
+
+
+            <div class="feature-grid">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        🔬
+                    </div>
+
+                    <h3>
+                        AI Leaf Screening
+                    </h3>
+
+                    <p>
+                        Screens oil-palm leaves for healthy
+                        or abnormal patterns.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        🧪
+                    </div>
+
+                    <h3>
+                        Nutrient Detection
+                    </h3>
+
+                    <p>
+                        Checks abnormal leaves for possible
+                        nutrient-deficiency patterns.
+                    </p>
+
+                </div>
+
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        🌱
+                    </div>
+
+                    <h3>
+                        Practical Guidance
+                    </h3>
+
+                    <p>
+                        Converts analysis results into
+                        simple field-level next steps.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+
+                <h3>
+                    🌴 Palm Mitra
+                </h3>
+
+                <p>
+                    Smart assistance for better
+                    oil-palm cultivation.
+                </p>
+
+            </div>
+
+            <p class="copyright">
+                Palm Mitra • AI Agriculture Project
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>

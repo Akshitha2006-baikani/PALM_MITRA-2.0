@@ -1,4 +1,4 @@
-const AUTH_API_URL = "http://127.0.0.1:8000";
+const AUTH_API_URL = "https://palm-mitra-2-0.onrender.com";
 
 
 /* =========================
